@@ -1,6 +1,5 @@
 package lesson01;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.UnaryOperator;
@@ -44,15 +43,11 @@ public class homework {
         return arr;
     }
 
-    private static List<Integer> replaceArrItems(int[] arr, int val1, int val2) {
+    private static List<Integer> replaceArrItems(Integer[] arr, int val1, int val2) {
         // 1.Задать целочисленный массив, состоящий из элементов 0 и 1.
         // Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия
         // заменить 0 на 1, 1 на 0;
-        List<Integer> arr2 = new ArrayList<Integer>(arr.length);
-        for (int i : arr) { // Не нашел более простого способа преобразовать массив int[] в List<Integer>
-            arr2.add(i); // Если знаете, то прошу написать в коментарии к оценке как можно проще это
-                         // сделать
-        }
+        List<Integer> arr2 = Arrays.asList(arr);
         UnaryOperator<Integer> op = (num) -> num == val1 ? val2 : val1; // Мог бы просто циклом, но лямбду попробовать
                                                                         // интереснее было
         arr2.replaceAll(op);
@@ -100,7 +95,7 @@ public class homework {
         System.out.println(isLeapYear(2023));
         System.out.println(Arrays.toString(createArray(10, 33)));
         printString("abcd", 5); // abcdabcdabcdabcdabcd
-        int[] arr = { 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0 };
+        Integer[] arr = { 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0 };
         System.out.println(Arrays.toString(replaceArrItems(arr, 1, 0).toArray()));
         int[] arr2 = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
         System.out.println(Arrays.toString(productArrItems(arr2)));

@@ -11,10 +11,14 @@ import java.util.List;
 
 public class homeworks {
 
-    /** Метод для построения строки
-     * Дано четное число N (>0) и символы c1 и c2. Написать метод, который вернет строку длины N, которая
-     * состоит из чередующихся символов c1 и c2, начиная с c1. (6, 'a', 'b') -> "ababab"
-     * @param n количество повторов (обязательно четное)
+    /**
+     * Метод для построения строки
+     * Дано четное число N (>0) и символы c1 и c2. Написать метод, который вернет
+     * строку длины N, которая
+     * состоит из чередующихся символов c1 и c2, начиная с c1. (6, 'a', 'b') ->
+     * "ababab"
+     * 
+     * @param n  количество повторов (обязательно четное)
      * @param c1 первый символ
      * @param c2 второй символ
      * @return Возарвщает сгенерированную строку
@@ -29,27 +33,31 @@ public class homeworks {
         return result;
     }
 
-    /** Метод записывает массив строк в файл
+    /**
+     * Метод записывает массив строк в файл
      * Создать файл с названием file.txt. Если файл уже есть, то создавать не надо
      * Записать в него Слово "TEXT" 100 раз
+     * 
      * @param fileName Имя файла
-     * @param words Массив строк
+     * @param words    Массив строк
      */
     static void createFile01(String fileName, List<String> words) {
-        Path file = Paths.get(fileName);
         try {
+            Path file = Paths.get(fileName);
             Files.write(file, words, StandardCharsets.UTF_8);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    /** Метод список слов побайтово, можно разделить символом перевода строки
+    /**
+     * Метод список слов побайтово, можно разделить символом перевода строки
      * Создать файл с названием file.txt. Если файл уже есть, то создавать не надо
      * Записать в него Слово "TEXT" 100 раз
+     * 
      * @param filename Имя файла
-     * @param words Массив строк
-     * @param sep разделитель строк, например "/" или ""
+     * @param words    Массив строк
+     * @param sep      разделитель строк, например "/" или ""
      */
     static void createFile02(String filename, List<String> words, String sep) {
         String text = "";
