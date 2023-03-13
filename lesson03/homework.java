@@ -28,7 +28,7 @@ public class homework {
                 Integer.parseInt(arr.get(i));
                 arr.remove(i);
                 i--;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
             }
         }
     }
